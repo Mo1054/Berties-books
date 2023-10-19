@@ -10,9 +10,6 @@ const port = 8000;
 //Call bodyparser to read elements in template files
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-console.log("hello");
-
 // Define the database connection
 const db = mysql.createConnection({
   host: "localhost",
