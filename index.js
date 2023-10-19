@@ -10,21 +10,24 @@ const port = 8000;
 //Call bodyparser to read elements in template files
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+console.log("hello");
+
 // Define the database connection
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "appuser",
-//   password: "app2027",
-//   database: "myBookshop",
-// });
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "appuser",
+  password: "app2027",
+  database: "myBookshop",
+});
 // Connect to the database
-// db.connect((err) => {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log("Connected to database");
-// });
-// global.db = db;
+db.connect((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log("Connected to database");
+});
+global.db = db;
 
 // Set up css
 app.use(express.static(__dirname + "/public"));
